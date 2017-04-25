@@ -1,5 +1,13 @@
-const createFile = require('./createFile');
+const create = require('./createFile');
+const files = require('./files');
+const body = require('./createBody');
 
-createFile(null, null, `
-export * from ('');
-`);
+create.createDir('Main', (path) => {
+  files.forEach((file) => {
+    const name = (file.name || path) + (file.postfix || '');
+    const ext = file.ext || 'ts';
+
+    create.createFile(`${path}/${name}.${ext}`, body(file, path));
+  });
+});
+

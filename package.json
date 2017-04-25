@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "fs-extra": "^2.1.2"
+  },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -13,7 +15,7 @@
     "type": "git",
     "url": "git+https://github.com/iliatcymbal/ngc.git"
   },
-  "author": "ilitcymbal, yshpacovich",
+  "author": "iliatcymbal, yshpacovich",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/iliatcymbal/ngc/issues"

@@ -1,14 +1,29 @@
-const fs = require('fs');
+const fs = require('fs-extra');
 
-module.exports = function (name, ext, body) {
-  name = name || 'index';
-  ext = ext || 'ts';
+const createFile = (name, body) => {
+  name = name || 'index.ts';
   body = body || '';
 
-  const fileName = `${name}.${ext}`;
-
-  fs.writeFile(fileName, body, (err) => {
+  fs.writeFile(name, body, (err) => {
     if (err) throw err;
-    console.log(`The file "${fileName}" was created`);
+    console.log(`The file "${name}" was created`);
   });
 };
+
+const createDir = (name, callback) => {
+  name = name || 'Main';
+
+  fs.ensureDir(name, (err) => {
+
+    if (err) throw err;
+
+    console.log(`The dir "${name}" was created`);
+
+    if (callback) {
+      callback(name);
+    }
+  });
+
+};
+
+module.exports = { createFile, createDir};
