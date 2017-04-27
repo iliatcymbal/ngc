@@ -5,13 +5,14 @@ const main = require('./types/main');
 
 module.exports = (file, path) => {
   const postfix = file.postfix || '';
+  const prefix = file.prefix;
 
   if (file.name === 'index') {
     return main(path, postfix);
   }
 
   if (file.ext === 'ts' && file.type === 'component') {
-    return component(path, postfix);
+    return component(path, prefix, postfix);
   }
 
   if (/less|sass|css/.test(file.ext)) {
@@ -19,7 +20,7 @@ module.exports = (file, path) => {
   }
 
   if (file.ext === 'html') {
-    return html(path);
+    return html(path, prefix);
   }
 
   return '';

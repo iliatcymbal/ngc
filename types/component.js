@@ -1,17 +1,21 @@
-module.exports = (path, postfix) => {
-  const componentName = path.toLowerCase() + postfix;
+const helpers = require('./../lib/helpers');
 
+module.exports = (name, prefix, postfix) => {
+  const componentClassName = helpers.vengerToCamelCase(name);
+  const componentFileName = name + postfix;
+  const componentSelector = prefix ? `${prefix}-${name}` : name;
+  
   return `import {
   Component,
   OnInit
 } from '@angular/core';
 
 @Component({
-  selector: '${componentName}.html',
-  styleUrls: [ './${componentName}.css' ],
-  templateUrl: './${componentName}.html'
+  selector: '${componentSelector}',
+  styleUrls: [ './${componentFileName}.scss' ],
+  templateUrl: './${componentFileName}.html'
 })
-export class HomeComponent implements OnInit {
+export class ${componentClassName}Component implements OnInit {
   constructor() { }
   
   public ngOnInit() { }
