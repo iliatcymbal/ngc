@@ -1,18 +1,13 @@
 const fs = require('fs-extra');
 
-const createFile = (name, body) => {
-  name = name || 'index.ts';
-  body = body || '';
-
+const createFile = (name = 'index.ts', body = '') => {
   fs.writeFile(name, body, (err) => {
     if (err) throw err;
     console.log(`The file "${name}" was created`);
   });
 };
 
-const createDir = (name, callback) => {
-  name = name || 'Main';
-
+const createDir = (name = 'Main', callback) => {
   fs.ensureDir(name, (err) => {
 
     if (err) throw err;
@@ -26,4 +21,4 @@ const createDir = (name, callback) => {
 
 };
 
-module.exports = { createFile, createDir};
+module.exports = { createFile, createDir };

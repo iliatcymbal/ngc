@@ -1,9 +1,8 @@
 const helpers = require('./../lib/helpers');
 
-module.exports = (name, prefix, postfix) => {
-  const componentClassName = helpers.vengerToCamelCase(name);
-  const componentFileName = postfix ? `${name}-${postfix}` : name;
-  const componentSelector = prefix ? `${prefix}-${name}` : name;
+module.exports = (name, path) => {
+  const componentClassName = helpers.vengerToCamelCase(path);
+  const componentSelector = name.toLowerCase().replace(/\W+/g, '-');
 
   return `import {
   Component,
@@ -12,8 +11,8 @@ module.exports = (name, prefix, postfix) => {
 
 @Component({
   selector: '${componentSelector}',
-  styleUrls: [ './${componentFileName}.scss' ],
-  templateUrl: './${componentFileName}.html'
+  styleUrls: [ './${name}.scss' ],
+  templateUrl: './${name}.html'
 })
 export class ${componentClassName} implements OnInit {
   constructor() { }

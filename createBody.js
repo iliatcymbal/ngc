@@ -3,17 +3,13 @@ const style = require('./types/style');
 const html = require('./types/html');
 const main = require('./types/main');
 
-module.exports = (file, path) => {
-  const { postfix, prefix } = file;
-
-  console.log(__dirname);
-
+module.exports = (file, path, name) => {
   if (file.name === 'index') {
-    return main(path, file.name);
+    return main(name);
   }
 
   if (file.ext === 'ts' && file.type === 'component') {
-    return component(path, prefix, postfix);
+    return component(file.name, path);
   }
 
   if (/less|sass|css/.test(file.ext)) {
@@ -21,7 +17,7 @@ module.exports = (file, path) => {
   }
 
   if (file.ext === 'html') {
-    return html(path, prefix);
+    return html(name);
   }
 
   return '';

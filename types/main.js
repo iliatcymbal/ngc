@@ -1,3 +1,3 @@
-module.exports = (path, name) => {
+module.exports = (path) => {
   return `export * from './${path}.ts';`;
 };
