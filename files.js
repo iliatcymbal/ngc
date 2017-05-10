@@ -1,20 +1,16 @@
 module.exports = [
   {
     name: 'index',
-    ext: 'ts',
-    postfix: '.component'
+    ext: 'ts'
   },
   {
-    ext: 'scss',
-    postfix: '.component'
+    ext: 'scss'
   },
   {
     ext: 'ts',
-    type: 'component',
-    postfix: '.component'
+    type: 'component'
   },
   {
-    ext: 'html',
-    postfix: '.component'
+    ext: 'html'
   }
 ];

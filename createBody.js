@@ -4,11 +4,10 @@ const html = require('./types/html');
 const main = require('./types/main');
 
 module.exports = (file, path) => {
-  const postfix = file.postfix || '';
-  const prefix = file.prefix;
+  const { postfix, prefix } = file;
 
   if (file.name === 'index') {
-    return main(path, postfix);
+    return main(path, file.name);
   }
 
   if (file.ext === 'ts' && file.type === 'component') {

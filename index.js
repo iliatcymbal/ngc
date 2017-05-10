@@ -3,15 +3,16 @@ const create = require('./createFile');
 const files = require('./files');
 const body = require('./createBody');
 
-const name = argv['name'] || 'component-name';
-const prefix = argv['prefix'];
+const name = argv['name'] || 'component';
+const prefix = argv['prf'];
+const postfix = argv['postfix'];
 
 create.createDir(name, (path) => {
   files.forEach((file) => {
-    const name = (file.name || path) + (file.name !== 'index' && file.postfix || '');
+    const name = `${prefix || ''}${file.name || path}${postfix || ''}`;
     const ext = file.ext || 'ts';
 
-    file.prefix = prefix;
+    Object.assign(file, { postfix, prefix, name });
 
     create.createFile(`${path}/${name}.${ext}`, body(file, path));
   });
