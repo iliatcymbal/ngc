@@ -74,7 +74,7 @@ Define the name of created component (by default set to "Component").
  Set delimiter to separate component name from postfix/prefix (by default is ".");
  
   ```
-  ngms --prf=main --name=component --div=-.
+  ngms --prf=main --name=component --div=-
   ```
   
   Will generate the following:
