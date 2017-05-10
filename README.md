@@ -24,7 +24,7 @@ Run `ngms` to create folder named "NewComponent" with default structure:
 
 You can change default component name by defining additional parameters.
 
-###name
+### name
 Define the name of created component (by default set to "Component").
  
  ```
@@ -40,7 +40,7 @@ Define the name of created component (by default set to "Component").
     * Main.scss
 
 
-##prf
+## prf
  Allows to set text prefix to the name of your component (by default is empty);
  
   ```
@@ -55,7 +55,7 @@ Define the name of created component (by default set to "Component").
      * Main.NewComponent.html
      * Main.NewComponent.scss
  
-##postfix
+## postfix
  Allows to set text postfix to the name of your component (by default is empty);
  
   ```
@@ -70,7 +70,7 @@ Define the name of created component (by default set to "Component").
      * NewComponent.post.html
      * NewComponent.post.scss
 
-##div
+## div
  Set delimiter to separate component name from postfix/prefix (by default is ".");
  
   ```
