@@ -44,7 +44,7 @@ Define the name of created component (by default set to "Component").
  Allows to set text prefix to the name of your component (by default is empty);
  
   ```
-  ngms --prf=Main.
+  ngms --prf=Main
   ```
   
   Will generate the following:
@@ -59,7 +59,7 @@ Define the name of created component (by default set to "Component").
  Allows to set text postfix to the name of your component (by default is empty);
  
   ```
-  ngms --postfix=post.
+  ngms --postfix=post
   ```
   
   Will generate the following:
