@@ -6,6 +6,8 @@ const main = require('./types/main');
 module.exports = (file, path) => {
   const { postfix, prefix } = file;
 
+  console.log(__dirname);
+
   if (file.name === 'index') {
     return main(path, file.name);
   }

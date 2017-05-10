@@ -18,3 +18,6 @@ create.createDir(name, (path) => {
   });
 });
 
+module.exports = create.createDir();
+
+

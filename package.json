@@ -1,5 +1,5 @@
 {
-  "name": "ngc",
+  "name": "ngms",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -21,5 +21,6 @@
   "bugs": {
     "url": "https://github.com/iliatcymbal/ngc/issues"
   },
-  "homepage": "https://github.com/iliatcymbal/ngc#readme"
+  "homepage": "https://github.com/iliatcymbal/ngc#readme",
+  "bin": "./index.js"
 }
